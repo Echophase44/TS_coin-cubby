@@ -94,6 +94,7 @@ label{
 input{
   border: 1px solid var(--clr-dark);
   border-radius: 5px;
+  height: 2em;
 }
 
 /* Person Section */
@@ -109,6 +110,29 @@ input{
   align-items: center;
   gap: 1em;
   padding: 1em;
+}
+
+.section_people-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+  padding: 2em;
+  gap: 1em;
+}
+
+.person_card{
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  justify-content: start;
+  background-color: #fff;
+  box-shadow: var(--bs);
+}
+
+.card_title{
+  background-color: var(--clr-red);
+  margin: 0;
+  border-radius: 8px 8px 0px 0px;
 }
 
 /* Chores Section */
