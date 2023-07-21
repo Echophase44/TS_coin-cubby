@@ -12,30 +12,40 @@
   <script src="https://kit.fontawesome.com/7d4bf5354c.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <!-- TEMPLATES -->
+  <template id="temp_personCard">
+    <div class="person_card">
+      <h3 class="card_title">Title</h3>
+      <span class="card_value">Value</span>
+    </div>
+  </template> 
+
+  <template id="temp_chore">
+    <li class="chores_list-item">
+      <span>Clean Room</span>
+      <span>4.00</span>
+    </li>
+  </template>
+
+
   <header>
     <h1>CoinCubby</h1>
   </header>
 
   <div class="sections_container">
     <section class="section_people">
-      <div class="section_title">
+      <div class="section_people-title">
         <h2>People</h2>
         <form class="form">
-          <label for="name">Name</label>
-          <input type="text" id="name">
-          <button class="btn">Add Person</button>
+          <div class="form_person-controller">
+            <label for="name">Name</label>
+            <input type="text" id="name">
+          </div>
+          <button id="btn_addPerson" class="btn">Add Person</button>
         </form>
       </div>
-      <div class="section_people-container">
-        <div class="person_card">
-          <h3 class="card_title">Isla</h3>
-        </div>
-        <div class="person_card">
-          <h3 class="card_title">Isla</h3>
-        </div>
-        <div class="person_card">
-          <h3 class="card_title">Isla</h3>
-        </div>
+
+      <div id="person_host" class="section_people-container">
       </div>
     </section>
 
@@ -45,17 +55,20 @@
           <div class="form_chores-controller">
             <label for="chore">Chore</label>
             <input type="text" id="chore">
-            <label for="value">Price</label>
-            <input type="text" id="value">
+            <label for="price">Price</label>
+            <input type="text" id="price">
           </div>
-          <button class="btn">Add Chore</button>
+          <button id="btn_addChore" class="btn">Add Chore</button>
         </form>
       </div>
 
       <div class="section_chores-listContainer">
-        <h2>Chores</h2>
+        <h2 class="chores_title">Chores</h2>
+        <ul id="chores_host" class="chores_list">
+        </ul>
       </div>
     </section>
   </div>
+
 </body>
 </html>
