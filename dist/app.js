@@ -7,19 +7,23 @@ btn_addChore === null || btn_addChore === void 0 ? void 0 : btn_addChore.addEven
 });
 btn_addPerson === null || btn_addPerson === void 0 ? void 0 : btn_addPerson.addEventListener("click", () => {
     event === null || event === void 0 ? void 0 : event.preventDefault();
-    console.log("test");
-    new PersonCard();
+    const cardNameInput = document.querySelector("#name");
+    const personName = cardNameInput.value;
+    new PersonCard(personName);
 });
 class PersonCard {
-    constructor() {
+    constructor(name) {
         this.templateElement = document.getElementById("temp_personCard");
         this.hostElement = document.getElementById("person_host");
         const newPersonNode = document.importNode(this.templateElement.content, true);
         this.element = newPersonNode.firstElementChild;
-        this.addPerson();
+        this.nameElement = this.element.querySelector(".card_title");
+        this.addPerson(name);
     }
-    addPerson() {
+    addPerson(name) {
         this.hostElement.appendChild(this.element);
+        console.log(this.nameElement);
+        console.log(name);
     }
 }
 class Chore {

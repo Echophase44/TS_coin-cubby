@@ -9,28 +9,43 @@ btn_addChore?.addEventListener("click", () => {
 
 btn_addPerson?.addEventListener("click", () => {
   event?.preventDefault()
-  console.log("test")
-  new PersonCard()
+  const cardNameInput = document.querySelector("#name") as HTMLInputElement;
+  const personName = cardNameInput.value
+  
+  new PersonCard(personName)
 })
 
 class PersonCard {
   templateElement: HTMLTemplateElement;
   hostElement: HTMLDivElement;
   element: HTMLDivElement;
+  nameElement: HTMLDivElement;
+  
 
-  constructor() {
+  constructor(name: string) {
     this.templateElement = document.getElementById("temp_personCard")! as HTMLTemplateElement;
     this.hostElement = document.getElementById("person_host")! as HTMLDivElement;
 
     const newPersonNode = document.importNode(this.templateElement.content, true);
     this.element = newPersonNode.firstElementChild as HTMLDivElement;
-    this.addPerson()
+
+    this.nameElement = this.element.querySelector(".card_title") as HTMLDivElement;
+    
+    this.addPerson(name)
   }
 
-  private addPerson() {
+  private addPerson(name: string) {
     this.hostElement.appendChild(this.element)
+    console.log(this.nameElement)
+    console.log(name)
   }
 }
+
+
+
+
+
+
 
 class Chore {
   templateElement: HTMLTemplateElement;
